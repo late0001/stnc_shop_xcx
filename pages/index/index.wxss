@@ -39,6 +39,37 @@
   border-radius: 15px;
 }
 
+
+/*分类*/
+view.section {
+  /*display: block;*/
+  width: 100%;
+}
+
+.index-nav {
+  height: 65px;
+  /*background: red;*/
+  display: flex;
+  flex-direction: row;
+  /*align-items: center;*/
+  background-color: #fff;
+  color: #646464;
+  text-align: center;
+}
+.index-nav view {
+  flex: 1;
+  flex-direction: column;
+}
+
+.index-nav image {
+  width: 38px;
+  height: 38px;
+}
+
+.index-nav text {
+  font-size: 12px;
+}
+
 .cont {
   width: 100%;
   background: #fff;

@@ -7,7 +7,15 @@
       </swiper-item>
     </block>
   </swiper>
-  
+  <view class="index-nav">
+    <block wx:for-items="{{proCat}}">
+      <view catchtap="go" data-type="{{item.text}}">
+        <image src="{{item.icon}}" class="slide-image" />
+        <view></view>
+        <text>{{item.name}}</text>
+      </view>
+    </block>
+  </view>
     
     <view class="cont">
       <navigator class="pr" url="../product/detail?productId={{item.id}}" hover-class="changestyle"
