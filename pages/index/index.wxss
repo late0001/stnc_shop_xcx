@@ -4,15 +4,13 @@
   font-family: '微软雅黑';
   background-color: #fff;
 }
-
-.swiper-item {
-  display: block;
-  height: 150px;
+.swiper {
+ height:250rpx;
 }
 
 .slide-image {
   width: 100%;
-  height: 150px;
+  height: 250rpx;
 }
 
 .nav {
@@ -56,12 +54,17 @@ view.section {
   color: #646464;
   text-align: center;
 }
-.index-nav view {
+/*.index-nav view {
   flex: 1;
+  flex-direction: column;
+}*/
+.index-nav2 {
+  flex : 1;
   flex-direction: column;
 }
 
 .index-nav image {
+  margin-top:20rpx;
   width: 38px;
   height: 38px;
 }

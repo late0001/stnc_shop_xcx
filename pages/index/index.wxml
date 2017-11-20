@@ -1,16 +1,18 @@
 <!-- index.wxml -->
 <view class="page">
-  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-    <block wx:for="{{imgUrls}}">
+
+<swiper  class="swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" >
       <swiper-item>
-        <image src="{{item.photo}}" class="slide-image" width="100%" height="200"  />
+        <image src="{{item.photo}}" class="slide-image" />
       </swiper-item>
     </block>
   </swiper>
+
   <view class="index-nav">
     <block wx:for-items="{{proCat}}">
-      <view catchtap="go" data-type="{{item.text}}">
-        <image src="{{item.icon}}" class="slide-image" />
+      <view class="index-nav2" catchtap="go" data-type="{{item.text}}">
+        <image src="{{item.icon}}"  />
         <view></view>
         <text>{{item.name}}</text>
       </view>
