@@ -24,7 +24,8 @@ Page({
     //准备数据
     //数据结构：以一组一组来进行设定
      commodityAttr:[],
-     attrValueList: []
+     attrValueList: [],
+     buynow:0,
   },
 
   // 弹窗
@@ -44,11 +45,18 @@ Page({
 
     if (e.currentTarget.dataset.status == 1) {
 
-      this.setData(
-        {
+      this.setData({
           showModalStatus: true
-        }
-      );
+      });
+      if(e.currentTarget.dataset.type == 'buynow'){
+        this.setData({ 
+            buynow: 1
+        });
+      }else {
+        this.setData({
+            buynow: 0
+        });
+      }
     }
     setTimeout(function () {
       animation.translateY(0).step()
@@ -63,6 +71,24 @@ Page({
         );
       }
     }.bind(this), 200)
+  },
+
+  HdiePopWindow:function(){
+    var animation = wx.createAnimation({
+      duration: 500,
+      timingFunction: "linear",
+      delay: 0
+    })
+    animation.translateY(300).step()
+    this.setData({
+      animationData: animation.export()
+    })
+    setTimeout(function () {
+      this.setData({
+        showModalStatus: false,
+      })
+    }.bind(this),
+      500);
   },
   // 加减
   changeNum:function  (e) {
@@ -413,8 +439,9 @@ Page({
             wx.showToast({
                 title: '加入购物车成功',
                 icon: 'success',
-                duration: 2000
+                duration: 1000
             });
+            that.HdiePopWindow();
           }     
         }else{
           wx.showToast({
